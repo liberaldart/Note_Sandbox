@@ -67,5 +67,23 @@ To view your project, go to: [http://localhost:3000/](http://localhost:3000/)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 I used the boiler plate from Bucky Roberts's github profile.
 
-Developing further on that I need to use some UI components from material 
+# Developing further 
+
+I need to use some UI components from material. Look it up at [this link](https://github.com/liberaldart/Note_Sandbox/tree/master/Learn-Material)
+
+# Got Async functionality in the application with axios
+
+# Connected with elasticsearch api
+
+Had to change the config/elasticsearch.yml file. I added the following lines at the end of the file:
+
+```
+http.cors.enabled : true
+ 
+http.cors.allow-origin : "*"
+http.cors.allow-methods : OPTIONS, HEAD, GET, POST, PUT, DELETE
+http.cors.allow-headers : X-Requested-With,X-Auth-Token,Content-Type, Content-Length
+```
+
+This was to allow cross origin in my elaticsearch instance
 Design

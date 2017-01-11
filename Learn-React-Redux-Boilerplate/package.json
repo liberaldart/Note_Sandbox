@@ -4,10 +4,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack",
-    "start": "webpack-dev-server --progress --colors"
+    "start": "webpack-dev-server --progress --colors --watch"
   },
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.15.3",
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.9.1",
@@ -26,7 +27,7 @@
     "react-redux": "^4.4.5",
     "react-tap-event-plugin": "^2.0.0",
     "redux": "^3.5.2",
-    "redux-logger": "^2.6.1",
+    "redux-logger": "^2.7.4",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0",
     "sass-loader": "^4.0.0",
