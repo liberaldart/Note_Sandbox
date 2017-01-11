@@ -77,6 +77,7 @@ I need to use some UI components from material. Look it up at [this link](https:
 
 Had to change the config/elasticsearch.yml file. I added the following lines at the end of the file:
 
+
 ```
 http.cors.enabled : true
  
