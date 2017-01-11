@@ -1,5 +1,10 @@
-#Created a smart component, aka container in note.js file
-#Content:
+# [Home](https://github.com/liberaldart/Note_Sandbox)
+
+# First Material-UI component
+
+# Created a smart component, aka container in note.js file
+
+# note.js:
 ```
 import React, {Component} from "react";
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -22,7 +27,7 @@ export class Note extends Component {
 ```
 
 
-# Also added the following lines in index.html:
+# For google fonts: Also added the following lines in index.html:
 ```
 <!-- https://github.com/callemall/material-ui says
     I need to use the following way to
