@@ -2,23 +2,23 @@
 
 ## Webpack
 In order to understand this project we need to understand how webpack works. Please visit
-Learn-Webpack in the parent directory
+[Learn-Webpack](https://github.com/liberaldart/Note_Sandbox/tree/master/Learn-Webpack) in the parent directory
 
 ## React
 Later comes the concept of React. In order to understand React, we need to understand 
 how a react component is made, how the component stores it's state privately and 
-allows only to change it with setState method.
+allows only to change it with setState method. Follow the [YouTube playlist](https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBuKtLgPR_zWYnrwv-JllpA)
 
 ## Redux
 Later we understand how two components interact through their parent component.
 For handling complex heirarchy of components communicating among each other, we need an organized
 approach. Redux provides that approach through one store, one provider, dumb component, 
 smart components,
-actions and reducers.
+actions and reducers. Follow the [YouTube Playlist](https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBbSLZjvleMwldX8jGgXV6a)
 
 ## Material
 Later on, we learn to use material design components in our components heirarchy. In order to learn
-that please visit Learn-React in the parent directory.
+that please visit [Learn-Material](https://github.com/liberaldart/Note_Sandbox/tree/master/Learn-Material) in the parent directory.
 
 ## Citation
 I learnt the basics of React and Redux pretty quickly with Bucky roberts: [Bucky Roberts Youtube channel](https://www.youtube.com/user/thenewboston)
