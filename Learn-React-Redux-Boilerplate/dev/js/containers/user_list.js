@@ -34,6 +34,9 @@ function mapStateToProps(state) {
     }
 }
 
+/*
+TBD
+ */
 function matchDispatchToProps(dispatch){
     return bindActionCreators({selectUser: selectUser}, dispatch);
 }

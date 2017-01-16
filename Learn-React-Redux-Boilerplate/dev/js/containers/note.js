@@ -1,18 +1,28 @@
 import React, {Component} from "react";
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
 
-// Needed for onTouchTap
-// http://stackoverflow.com/a/34015469/988941
-injectTapEventPlugin();
+import { getNotes } from '../actions/get_notes';
+import { bindActionCreators } from 'redux';
+import { connect } from "react-redux";
+import { NoteComponent } from "../components/note_component";
 
-export class Note extends Component {
+
+export class Note extends Component { 
+
     render() {
         return (
-            <MuiThemeProvider>
-                <RaisedButton label="Save" />
-            </MuiThemeProvider>   
+            <NoteComponent />   
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        notes: state.notes
+    }
+}
+
+function mapDispatchToProps(state) {
+    return bindActionCreators({getNotes: getNotes}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Note);

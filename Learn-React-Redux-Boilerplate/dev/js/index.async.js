@@ -22,16 +22,9 @@ import { App } from "./components/App";
 const middleware = applyMiddleware(thunk, logger());
 const store = createStore(allReducers, middleware);
 
-store.dispatch((dispatch) => {
-    dispatch({ type: "FETCH_NOTES_START" });
-    axios.get("http://localhost:9200/subject/note/_search")
-        .then((response) => {
-            dispatch({ type: "FETCH_NOTES_RECEIVED", payload: response.data });
-        })
-        .catch((err) => {
-            dispatch({ type: "FETCH_NOTES_ERROR", payload: err });
-    })
+// store.dispatch((dispatch) => {
     
-});
+    
+// });
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
