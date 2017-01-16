@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { selectUser } from "../actions/user_actions";
+import { selectUser } from "../actions/selectUser_action";
 
 class UserList extends Component {
 
@@ -20,6 +20,7 @@ class UserList extends Component {
     }
 
     render() {
+        
         return (
             <ul>
                 {this.renderList()}
@@ -35,7 +36,7 @@ function mapStateToProps(state) {
 }
 
 /*
-TBD
+
  */
 function matchDispatchToProps(dispatch){
     return bindActionCreators({selectUser: selectUser}, dispatch);

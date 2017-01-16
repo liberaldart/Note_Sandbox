@@ -2,7 +2,7 @@ import React, {Component} from "react";
 require('../../scss/style.scss');
 import UserList from "../containers/user_list";
 import UserDetails from "../containers/user_details";
-import { Note } from "../containers/note";
+import {NoteList} from '../containers/note_list';
 
 export class App extends Component {
     render() {
@@ -13,7 +13,7 @@ export class App extends Component {
                 <hr />
                 <h2>User Details</h2>
                 <UserDetails />
-                <Note />
+                <NoteList />
             </div>
         ); 
     }
