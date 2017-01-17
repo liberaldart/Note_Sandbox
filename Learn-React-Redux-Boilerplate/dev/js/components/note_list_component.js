@@ -1,14 +1,30 @@
 import React, { Component } from 'react';
 
-export class NoteListComponent extends Component {
+export default class NoteListComponent extends Component {
+
+    mappedNotes() {
+        if (this.props.all_notes.notes.length) {
+                return this.props.all_notes.notes.map((note) => {
+                    console.log("returning " + note._source.front);
+                    return (
+                        <li key={note._id}> {note._source.front} </li>
+                    );
+                })    
+            } else {
+                return " ";
+            }
+        
+    }    
+
     render() {
         return (
             <div>
-                Display notes list:
-                {this.props.notes}
-                
+             List:     
+                <ul>
+                    {this.mappedNotes()}
+                </ul>    
             </div>
-        )
+        );
     }
 }
 

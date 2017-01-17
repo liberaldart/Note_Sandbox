@@ -35,9 +35,6 @@ function mapStateToProps(state) {
     }
 }
 
-/*
-
- */
 function matchDispatchToProps(dispatch){
     return bindActionCreators({selectUser: selectUser}, dispatch);
 }

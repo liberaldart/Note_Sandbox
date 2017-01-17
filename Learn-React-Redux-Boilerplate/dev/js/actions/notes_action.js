@@ -1,32 +1,13 @@
-export let get_notes_started = () => {
-    return {
-        type: "GET_NOTES_STARTED",
-        payload: "ajax request sent"
+import axios from 'axios';
+
+export const fetchNotes = () => {
+    return (dispatch) => {
+        axios.get("http://localhost:9200/subject/note/_search")
+        .then((response) => {
+            dispatch({type: "FETCH_NOTES_FULFILLED", payload: response.data});
+        })
+        .catch((err) => {
+            dispatch({type: "FETCH_NOTES_REJECTED", payload: err});
+        })
     }
 }
-
-export let get_notes_received = (data) => {
-    return {
-        type: "GET_NOTES_RECEIVED",
-        payload: data
-    }
-}
-
-export let get_notes_error = (err) => {
-    return {
-        type: "GET_NOTES_ERROR",
-        payload: err
-    }
-}
-
-export let axios_middleware_notes_actions = () => {
-    return {
-        types: ['LOAD','AWESOME','OH_NO'],
-        payload: {
-            request:{
-                url:'/note/_search'
-            }
-        }
-  }
-}
-

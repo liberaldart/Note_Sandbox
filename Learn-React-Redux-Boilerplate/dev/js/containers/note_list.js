@@ -1,27 +1,18 @@
 import React, { Component } from 'react';
-import { NoteListComponent } from '../components/note_list_component';
+import NoteListComponent from '../components/note_list_component';
+import { fetchNotes } from '../actions/notes_action';
 import { bindActionCreators } from 'redux';
-import * as notes_actions from '../actions/notes_action';
 import { connect } from "react-redux";
-import axios from 'axios';
 
-export class NoteList extends Component {
+class NoteList extends Component {
 
     componentDidMount() {
-        console.log("NoteList component loaded already")
-        notes_actions.get_notes_started();
-        axios.get("http://localhost:9200/subject/note/_search")
-        .then((response) => {
-            notes_actions.get_notes_received(response.data);
-        })
-        .catch((err) => {
-            notes_actions.get_notes_error(err);
-        })
+        //console.log(this.props);
+        this.props.fetchNotes();
     }    
 
     render() { 
-        
-        return (<NoteListComponent notes={this.props.notes}/>)
+        return (<NoteListComponent all_notes={this.props.notes}/>)
     }
 }
 
@@ -31,8 +22,9 @@ function mapStateToProps(state) {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators(...notes_actions, dispatch);
+function matchDispatchToProps(dispatch){
+    return bindActionCreators({fetchNotes: fetchNotes}, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NoteList);
+
+export default connect(mapStateToProps, matchDispatchToProps)(NoteList);
