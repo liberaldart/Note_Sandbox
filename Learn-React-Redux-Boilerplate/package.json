@@ -27,6 +27,7 @@
     "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
+    "react-tagsinput": "^3.14.0",
     "react-tap-event-plugin": "^2.0.0",
     "redux": "^3.5.2",
     "redux-axios-middleware": "^3.0.0",

@@ -126,3 +126,6 @@ npm install image-webpack-loader --save
     }
 
 
+# Get tags component from the community
+
+npm install react-tagsinput --save
