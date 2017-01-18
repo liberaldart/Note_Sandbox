@@ -16,7 +16,7 @@ export default class CardExampleControlled extends React.Component {
     };
   }
 
-  handleExpandChange = (expanded) =>  {
+  handleExpandChange = (expanded) => {
     this.setState({expanded: expanded});
   };
 
@@ -33,13 +33,13 @@ export default class CardExampleControlled extends React.Component {
   };
 
   render() {
-      return (
-          <MuiThemeProvider>
-            <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
+    return (
+      <MuiThemeProvider>
+        <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
         <CardHeader
-          title="URL Avatar"
-          subtitle="Subtitle"
-          avatar="images/ok-128.jpg"
+          title="Data Science"
+          subtitle="Learn to be a pro"
+          avatar="../../public/images/DataScience_logo.png"
           actAsExpander={true}
           showExpandableButton={true}
         />
@@ -48,16 +48,16 @@ export default class CardExampleControlled extends React.Component {
             toggled={this.state.expanded}
             onToggle={this.handleToggle}
             labelPosition="right"
-            label="This toggle controls the expanded state of the component."
+            label="Enter your notes."
           />
         </CardText>
         <CardMedia
           expandable={true}
-          overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
+          overlay={<CardTitle title="Write Notes" subtitle="notes should have essence of your knowledge" />}
         >
-          <img src="images/nature-600-337.jpg" />
+          <img src="../../public/images/RoadToDataScientist1.png" />
         </CardMedia>
-        <CardTitle title="Card title" subtitle="Card subtitle" expandable={true} />
+        <CardTitle title="Knowledge Capsule" subtitle="Data Science" expandable={true} />
         <CardText expandable={true}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
@@ -68,8 +68,8 @@ export default class CardExampleControlled extends React.Component {
           <FlatButton label="Expand" onTouchTap={this.handleExpand} />
           <FlatButton label="Reduce" onTouchTap={this.handleReduce} />
         </CardActions>
-      </Card>      
-        </MuiThemeProvider>      
+      </Card>  
+      </MuiThemeProvider>
       
     );
   }
