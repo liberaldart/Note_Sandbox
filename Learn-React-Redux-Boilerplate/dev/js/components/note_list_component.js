@@ -19,7 +19,7 @@ export default class NoteListComponent extends Component {
     render() {
         return (
             <div>
-             List:     
+             Notes:     
                 <ul>
                     {this.mappedNotes()}
                 </ul>    
