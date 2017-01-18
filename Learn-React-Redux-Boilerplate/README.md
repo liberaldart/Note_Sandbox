@@ -88,3 +88,29 @@ http.cors.allow-headers : X-Requested-With,X-Auth-Token,Content-Type, Content-Le
 
 This was to allow cross origin in my elaticsearch instance
 Design
+
+# Learnt to use Redux with async actions. 
+
+Also learnt the concept of middleware for redux. Learnt to use promise middle, thunk middleware and
+
+# Need for ES7 features
+
+Inside a React subclass you can't use ES6 arrow notation functions. For this we need ES7
+Following the article: http://jamesknelson.com/using-es6-in-the-browser-with-babel-6-and-webpack/
+
+Need to install: 
+# If you want to use experimental ES7 features
+npm install babel-preset-stage-0 --save-dev
+
+Also installed babel runtime. This is needed so that we can reduce filesize that results from 
+repeated code. With this runtime liberary the repeated code will be transformed by babel at runtime.
+
+npm install babel-plugin-transform-runtime --save-dev
+
+I also had to follow the suggestion in this stackoverflow answer:
+http://stackoverflow.com/questions/35266706/webpack-error-cannot-define-query-and-multiple-loaders-in-loaders-list
+
+
+
+
+

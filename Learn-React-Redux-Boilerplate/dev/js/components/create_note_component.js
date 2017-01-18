@@ -16,19 +16,19 @@ export default class CardExampleControlled extends React.Component {
     };
   }
 
-  handleExpandChange(expanded)  {
+  handleExpandChange = (expanded) =>  {
     this.setState({expanded: expanded});
   };
 
-  handleToggle(event, toggle) {
+  handleToggle = (event, toggle) => {
     this.setState({expanded: toggle});
   };
 
-  handleExpand() {
+  handleExpand = () => {
     this.setState({expanded: true});
   };
 
-  handleReduce() {
+  handleReduce = () => {
     this.setState({expanded: false});
   };
 
