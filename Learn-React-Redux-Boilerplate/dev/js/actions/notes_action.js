@@ -33,11 +33,10 @@ export const saveNotes = (new_note_data) => {
     return (dispatch) => {
         axios.post("http://localhost:9200/subject/note", new_note_data
         ).then((response) => {
-            dispatch({ type: "SAVE_NOTES_FULFILLED" });
+                dispatch({ type: "SAVE_NOTES_FULFILLED" });
         })
-        .then(dispatch(fetchNotes()))
         .catch((err) => {
-            dispatch({ type: "SAVE_NOTES_REJECTED", payload: err });
+                dispatch({ type: "SAVE_NOTES_REJECTED", payload: err });
         })
     }
 }

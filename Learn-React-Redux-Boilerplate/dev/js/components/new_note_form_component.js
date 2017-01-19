@@ -50,6 +50,9 @@ export class NewFormComponent extends Component {
 
   saveNotes = () => {
       this.props.saveNotes(this.state);
+      setTimeout(() => {
+          this.props.fetchNotes();
+      }, 3000);
   }  
     
   render = () => {
