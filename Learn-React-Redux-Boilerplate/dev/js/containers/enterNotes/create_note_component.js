@@ -6,6 +6,12 @@ import Toggle from 'material-ui/Toggle';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import TagsInput from 'react-tagsinput';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+import { bindActionCreators } from 'redux';
+import { connect } from "react-redux";
+import { saveNotes, saveNewFormState } from "../../actions/notes_action";
+
 
 import 'react-tagsinput/react-tagsinput.css';
 
@@ -19,40 +25,24 @@ const style = {
       margin: 20,
       textAlign: 'center',
       display: 'inline-block',
-    };
+};
+    
+const button_style = {
+  marginRight: 20,
+};
 
-export default class CardExampleControlled extends React.Component {
+class CardExampleControlled extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      expanded: false,
-      tags: []
+      tags: [],
     };
   }
   
   handleChange = (tags) => {
     this.setState({tags})
   }
-
-  handleExpandChange = (expanded) => {
-    this.setState({expanded: expanded});
-  };
-
-  handleToggle = (event, toggle) => {
-    this.setState({expanded: toggle});
-  };
-
-  handleExpand = () => {
-    this.setState({expanded: true});
-  };
-
-  handleReduce = () => {
-    this.setState({expanded: false});
-  };
-
-  defTags = ["a", "bcd", "efg"];
-  sourceTags = ["klm", "nop"];
 
   render() {
     return (
@@ -69,6 +59,9 @@ export default class CardExampleControlled extends React.Component {
                 rowsMax={4}
                 /><br />
                 <TagsInput value={this.state.tags} onChange={this.handleChange} />
+              <FloatingActionButton onTouchTap={this.props.saveNotes} style={button_style}>
+                <ContentAdd />
+              </FloatingActionButton>
             </Paper>   
           </div>
       </MuiThemeProvider>
@@ -76,3 +69,16 @@ export default class CardExampleControlled extends React.Component {
     );
   }
 }
+
+
+function mapStateToProps(state) {
+  return {
+    new_note: state.new_note
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(Object.assign({}, { saveNotes: saveNotes }, { saveNewFormState: saveNewFormState }), dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardExampleControlled);
