@@ -129,3 +129,42 @@ npm install image-webpack-loader --save
 # Get tags component from the community
 
 npm install react-tagsinput --save
+
+# To use the application run the following in the ElasticSearch's kibana's plugin's dev tool:
+
+PUT /subject <= One of the index of the elasticsearch
+{
+  "mappings": {
+      "note": {                  <= document type
+        "properties": {              <= fields for this document type
+          "back": {
+            "type": "text"
+          },
+          "created": {
+            "type": "date",
+            "format": "yyyy-MM-dd"
+          },
+          "data": {
+            "type": "text"
+          },
+          "erased": {
+            "type": "boolean"
+          },
+          "front": {
+            "type": "text"
+          },
+          "revised": {
+            "type": "date",
+            "format": "yyyy-MM-dd"
+          },
+          "status": {
+            "type": "text"
+          },
+          "tags": {
+            "type": "text"
+          }
+        }
+      }
+    }
+}
+
