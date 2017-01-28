@@ -13,13 +13,6 @@ export const fetchNotes = () => {
 }
 
 
-/**
- * We define one action for every field.
- * On receiving the action in reducer we update the state for that field
- * And once we get the action to save the form data in the backend database,
- * then we get the state content and send it across
- */
-
 export const saveNewFormState = (new_form_content) => {
     if (new_form_content) {
         return {

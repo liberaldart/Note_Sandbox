@@ -168,3 +168,16 @@ PUT /subject <= One of the index of the elasticsearch
     }
 }
 
+This will initialize the schema that we are using with the application at this stage of development
+
+# Testing React-Redux application
+
+We are following the official recommendation of writing test cases:
+
+[Writing Tests in Redux environment](http://redux.js.org/docs/recipes/WritingTests.html)
+
+The link above recommends to use redux-mock-store for testing redux:
+Installing redux-mock-store
+
+It also recommends to install nock to mock the http requests
+
